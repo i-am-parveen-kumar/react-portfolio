@@ -68,6 +68,18 @@ $item-input-color: #f6b095;
       .todo-item-data {
         overflow-wrap: anywhere;
         padding-right: 5px;
+        .todo-text-container {
+          display: flex;
+          gap: 5px;
+          align-items: center;
+          .fa-icon {
+            height: 22px;
+            width: 22px;
+          }
+          .strikethrough {
+            text-decoration: line-through;
+          }
+        }
         .todo-item-input {
           outline: none;
           background-color: $item-input-color;
@@ -90,6 +102,10 @@ $item-input-color: #f6b095;
   .label {
     color: $label-color;
     margin-bottom: 5px;
+  }
+  .fa-icon {
+    height: 18px;
+    width: 18px;
   }
 }
 

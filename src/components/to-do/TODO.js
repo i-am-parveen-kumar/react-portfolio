@@ -7,6 +7,8 @@ import {
   faTrashCan,
   faCheck,
   faPencil,
+  faSquare,
+  faSquareCheck,
 } from "@fortawesome/free-solid-svg-icons";
 
 const TODO = () => {
@@ -28,7 +30,7 @@ const TODO = () => {
         text: todoInput,
         date: new Date(),
         description: todoDescription,
-        completed: false,
+        isCompleted: false,
         editMode: false,
       },
       ...prevTodos,
@@ -52,6 +54,7 @@ const TODO = () => {
     todos[index] = selectedTodo;
     setTodos([...todos]);
   };
+
   const moveTodo = (fromIndex, toIndex) => {
     const newTodos = [...todos];
     const [removedTodo] = newTodos.splice(fromIndex, 1);
@@ -135,21 +138,51 @@ const TodoItem = ({
             }}
           />
         ) : (
-          <div>{todo.text}</div>
+          <div className="todo-text-container">
+            {todo.isCompleted ? (
+              <FontAwesomeIcon
+                className="fa-icon"
+                icon={faSquareCheck}
+                onClick={() =>
+                  updateTodo({ ...todo, isCompleted: false }, index)
+                }
+              />
+            ) : (
+              <FontAwesomeIcon
+                className="fa-icon"
+                icon={faSquare}
+                onClick={() =>
+                  updateTodo({ ...todo, isCompleted: true }, index)
+                }
+              />
+            )}
+            <div className={todo.isCompleted ? "strikethrough" : ""}>
+              {todo.text}
+            </div>
+          </div>
         )}
         <div className="todo-item-date">{todo.date.toLocaleString()}</div>
       </div>
       <div className="todo-buttons">
         {todo.editMode ? (
           <FontAwesomeIcon
+            className="fa-icon"
             icon={faCheck}
             onClick={() => updateTodo({ ...todo, editMode: false }, index)}
           />
         ) : (
-          <FontAwesomeIcon icon={faPencil} onClick={() => editTodo(index)} />
+          <FontAwesomeIcon
+            className="fa-icon"
+            icon={faPencil}
+            onClick={() => editTodo(index)}
+          />
         )}
 
-        <FontAwesomeIcon icon={faTrashCan} onClick={() => deleteTodo(index)} />
+        <FontAwesomeIcon
+          className="fa-icon"
+          icon={faTrashCan}
+          onClick={() => deleteTodo(index)}
+        />
       </div>
     </div>
   );
