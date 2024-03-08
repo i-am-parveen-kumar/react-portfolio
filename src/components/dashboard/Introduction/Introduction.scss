@@ -1,0 +1,18 @@
+.introduction-container {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 120px;
+  .dash-intro-img {
+    width: 421px;
+    height: 421px;
+  }
+  .hello-text {
+    font-size: 70px;
+    color: #ff5825;
+    line-height: 20px;
+    padding-top: 40px;
+  }
+  .intro-text {
+    font-size: 50px;
+  }
+}

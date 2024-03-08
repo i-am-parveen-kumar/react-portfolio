@@ -1,0 +1,19 @@
+.header-container {
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .menu-items {
+    display: flex;
+
+    ul {
+      text-decoration: none;
+      list-style: none;
+      font-weight: 600;
+      li {
+        display: inline;
+        padding: 40px;
+      }
+    }
+  }
+}
