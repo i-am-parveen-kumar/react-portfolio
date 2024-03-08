@@ -5,8 +5,8 @@ $text-color: #ffffff;
 $button-color: #3cb371;
 $label-color: #696969;
 $placeholder-color: #a9a9a9;
-
-.todo-container-1 {
+$item-input-color: #f6b095;
+.todo-container-light {
   display: flex;
   gap: 100px;
   background-color: $background-color;
@@ -14,6 +14,7 @@ $placeholder-color: #a9a9a9;
   border-radius: 10px;
   margin-bottom: 30px;
   margin-top: 5px;
+  min-height: 410px;
   .new-todo-container {
     flex: 1;
     display: flex;
@@ -61,10 +62,22 @@ $placeholder-color: #a9a9a9;
       padding: 12px;
       .todo-buttons {
         cursor: pointer;
+        display: flex;
+        gap: 5px;
       }
       .todo-item-data {
         overflow-wrap: anywhere;
         padding-right: 5px;
+        .todo-item-input {
+          outline: none;
+          background-color: $item-input-color;
+          color: $text-color;
+          height: 20px;
+          border-radius: 6px;
+          border: 1px solid #ffffff;
+          border: none;
+          padding: 2px 6px;
+        }
       }
     }
     .todo-item-date {
@@ -80,7 +93,7 @@ $placeholder-color: #a9a9a9;
   }
 }
 
-.toggle-button-1 {
+.toggle-button-light {
   background-color: #9a031e;
   color: #ffffff;
   padding: 10px 20px;
