@@ -1,5 +1,5 @@
 import Separator from "../common/separator/Separator";
-import TODO from "../to-do/TODO";
+import Todo from "../todo/Todo";
 import "./Dashboard.scss";
 import Introduction from "./Introduction/Introduction";
 import Skills from "./skills/Skills";
@@ -10,7 +10,7 @@ const Dashboard = () => {
       <Separator />
       <Skills />
       <Separator />
-      <TODO />
+      <Todo />
     </>
   );
 };
